@@ -24,7 +24,7 @@ const Actions = [
         lifeTime: 60,
         texts: [
             {
-                text: "你",
+                text: "我",
                 hsla: color1
             }
         ]
@@ -107,7 +107,7 @@ const Actions = [
         lifeTime: 60,
         texts: [
             {
-                text: "我",
+                text: "你",
                 hsla: color1
             }
         ]
@@ -116,7 +116,7 @@ const Actions = [
         lifeTime: 180,
         texts: [
             {
-                text: "我",
+                text: "I",
                 hsla: color2
             },
             {
@@ -124,15 +124,15 @@ const Actions = [
                 hsla: color3
             },
             {
-                text: "侯",
+                text: "Y",
                 hsla: color2
             },
             {
-                text: "菊",
+                text: "O",
                 hsla: color2
             },
             {
-                text: "玲",
+                text: "U",
                 hsla: color2
             }
         ]
