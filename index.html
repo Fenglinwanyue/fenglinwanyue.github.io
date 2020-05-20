@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>顺其自然的网站</title>
-        <style>
-            html,
-            body {
-                width: 100%;
-                height: 100%;
-                padding: 0;
-                margin: 0;
-                overflow: hidden;
-                background: rgba(255, 247, 240, 1);
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <title>写个井菲楠小仙女的情书</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgba(255, 247, 240, 1);
+      }
 
-            #mycanvas {
-                width: 100vw;
-                height: 100vh;
-            }
-        </style>
-        <script src="./static/js/actions.js"></script>
-    </head>
-    <body>
-        <canvas id="mycanvas" width="750" height="1334"></canvas>
-        <img id="tulip" src="./static/imgs/heart.png" alt="heart" />
+      #aa {
+        width: 100%;
+        font-size: 0.56rem;
+        line-height: 1.12rem;
+        /* 支持IE，chrome，FF不支持 */
+        word-break: break-all;
+        /* 支持IE，chrome，FF */
+        word-wrap: break-word;
+        padding: 0.8rem;
+        box-sizing: border-box;
 
-        <script src="./static/js/minify.js"></script>
-    </body>
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      #last {
+          display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- pre 标签中换行失效 -->
+    <pre id="aa"></pre>
+    <div style="display:none" id="w">亲爱的女王大人❤️❤️❤️❤️❤️🌹🌹🧚‍♀️:</br>    今天是 2020 年 5 月 20 日,一个充满爱意的日子,这一天对我来说和过去的每一天都是那么相似,因为有你,每天都是满满的幸福,但今天又是特殊的一天,因为今天是我们确定关系后的第一个 520,所以有很多话我想对你说</br>    还记得初次见面时的激动,当看到你的那一刻,我感觉春天已经来了,压抑不住内心的狂喜,我沉浸在自我的幻想中,以至于忘记了你问我的上句话,你以为我比较高冷,其实我热血澎湃,被你充满磁性且熟悉的声音,被你融情似水的双眼,被你真诚的表达吸引了 ,那一刻,我再想怎么把你骗到手,房子在那买合适,睡觉时我要抱着你睡,夏天要偷看你洗澡.嘿嘿.当我们在冬天的麦田结束了漫长的交流,我已经沉沦于余生的幻想,是的,I fell in love with you.</br>    也许是我曾许下的漫长假期的愿实现了,突如其来的疫情,给世界带来了考验,也给我们带来了时间,冬天的寒冷,喜鹊变得懒惰,于是我买了人生中的第一辆属于自己的电动车,当然也属于我们,是的,它只是电动车,但它却成为了我们爱情的鹊桥,将被疫情,距离隔开的我们带到了一起,于是,便有了我们漫步诗意的河堤,看野鸡在水草中觅食,看渔翁安静的垂钓,一切那么美好,放佛因为我们的到来,油菜花也开了起来,这美好时刻,我强吻了你,惹怒了你,也惹怒了河对面的少年.但那又怎样,月老安排红线时,我偷偷给他塞了钱,我们像风筝和线,牢牢的绑在了一起.</br>    伴随着春天的到来,我们也开始了新的生活,每日简单的早安,晚安,记得带伞,成了我每天的惦念,因为你,我的生活不再孤单,我欣赏你盛世的容颜,你给了我永久的春天.</br>    宝宝,我爱你,余生有你相伴,也许平凡,但不会平淡,愿你开开心心每一天,每天都有我的陪伴,我将是你坚强的臂膀,给你温暖,携手同行,白头到老.地老天荒,海枯石烂,纵使大雨倾倒整个世界,我会给你拥抱.</br>    每天都要开开信心哦.</br>    爱你的老公</br>    <span id="last">帅过</span>彭于晏<span id="last">的陈玉乐「le」</span></br>
+    </div>
+    <script language="javascript">
+      window.onload = function() {
+        var htmlHeight = document.documentElement.offsetHeight
+        var a = document.getElementById('aa').offsetHeight
+        var o2oviewportWidth = document.documentElement.clientWidth || window.screen.width
+        document.documentElement.style['font-size'] = o2oviewportWidth / 15 + 'px'
+        var index = 0,
+          timer,
+          timer1
+        var word = document.getElementById('w').innerText,
+          l = word.length
+        function type() {
+          if (index > l) {
+            clearInterval(timer)
+            timer1 = setTimeout(() => {
+                document.getElementById('last').display = "block"
+                clearTimeout(timer1)
+            }, 10000);
+
+            return
+          }
+          document.getElementById('aa').innerText = word.substring(0, index++)
+          a = document.getElementById('aa').offsetHeight
+          if (a > htmlHeight) {
+            window.scrollTo(0, a)
+          }
+        }
+        timer = setInterval(type, 200)
+      }
+    </script>
+  </body>
 </html>
